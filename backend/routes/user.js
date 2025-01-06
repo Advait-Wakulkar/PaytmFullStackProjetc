@@ -51,7 +51,6 @@ router.post("/signup", async (req, res)=>{
         message : "User created successfully",
         token : token
     })
-    
 })
 
 router.post("/signin", (req, res)=>{
@@ -83,7 +82,6 @@ router.post("/signin", (req, res)=>{
            token : token
         }
     )
-
 })
 
 module.exports = router;
