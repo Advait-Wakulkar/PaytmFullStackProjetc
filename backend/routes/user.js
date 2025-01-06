@@ -53,7 +53,7 @@ router.post("/signup", async (req, res)=>{
     })
 })
 
-router.post("/signin", (req, res)=>{
+router.post("/signin", async (req, res)=>{
     const response = signinSchema.safeParse(req.body)
     console.log(response.success)
     if(!response.success){
@@ -62,10 +62,12 @@ router.post("/signin", (req, res)=>{
         })
     }
 
-    const existingUser = User.findOne({
+    const existingUser = await User.findOne({
         username : req.body.username,
         password : req.body.password
     })
+
+    console.log(existingUser)
 
     if(!existingUser){
         return res.status(411).json(
