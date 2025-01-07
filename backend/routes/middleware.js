@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config");
 
-export function authMiddleware(req, res, next) {
+function authMiddleware(req, res, next) {
     if (!req.headers.authorization) {
         return res.status(403).json({ error: "Authorization header missing" });
     }
@@ -19,3 +19,5 @@ export function authMiddleware(req, res, next) {
         return res.status(403).json({ error: "Invalid or expired token" });
     }
 }
+
+module.exports = {authMiddleware}
