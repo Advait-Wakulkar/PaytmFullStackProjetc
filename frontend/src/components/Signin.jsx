@@ -40,12 +40,12 @@ function Signin(){
     }
 
     return <>
-    <div >
+    <div className="login-form" >
         <h1>Signin</h1>
         <p></p>
         <p>Enter your credentials to access your account</p>
         <p></p>
-        <div>
+        <div className="form-inputs">
             <label htmlFor="username">Username : </label>
             <input onChange={handleChange} type="email" id="username" name="username"></input>
             <p></p>

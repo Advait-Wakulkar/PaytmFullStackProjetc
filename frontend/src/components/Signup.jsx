@@ -38,10 +38,10 @@ function Signup() {
     };
 
     return (
-            <div>
+            <div className="login-form">
                 <h1>Signup</h1>
                 <p>Enter your information to create an account</p>
-
+                <div className="form-inputs">
                 <label htmlFor="firstName">First Name : </label>
                 <input
                     onChange={handleChange}
@@ -76,11 +76,16 @@ function Signup() {
                     id="password"
                     name="password"
                 />
+
+                
                 <p></p>
-                <button onClick={handleSubmit}>Signup</button>    
+                <button onClick={handleSubmit}>Signup</button> 
+                <p></p>
+
                 <p>Already have an account? 
                     <Link to={"/signin"}> Signin</Link>
                 </p>
+                </div>   
             </div>
     );
 }
