@@ -6,11 +6,11 @@ function Signup(){
     const [formData, setFormData] = useRecoilState(signupState)
 
     const handleChange = (e)=>{
-        const {field, value} = e.target
-        console.log({[field]:value})
+        const {name, value} = e.target
+        console.log({[name]:value})
         setFormData({
             ...formData,
-            [field] : value
+            [name] : value
         })
     }
 
@@ -26,13 +26,13 @@ function Signup(){
         <input onChange={handleChange} value={formData.firstName} type="textbox" id="firstname" name="firstname"></input>
         <p></p>
         <label htmlFor="lastname">Last Name : </label>
-        <input type="textbox" id="lastname" name="lastname"></input>
+        <input onChange={handleChange} type="textbox" id="lastname" name="lastname"></input>
         <p></p>
         <label htmlFor="email">Email : </label>
-        <input type="textbox" id="email" name="email"></input>
+        <input onChange={handleChange} type="textbox" id="email" name="email"></input>
         <p></p>
         <label htmlFor="password">Password : </label>
-        <input type="textbox" id="password" name="password"></input>
+        <input onChange={handleChange} type="textbox" id="password" name="password"></input>
         <p></p>
         <button>Signup</button>
         <p>Already have an account?  <button>Login</button>
