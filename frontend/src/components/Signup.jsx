@@ -79,7 +79,7 @@ function Signup() {
                 <p></p>
                 <button onClick={handleSubmit}>Signup</button>    
                 <p>Already have an account? 
-                    <Link to={"/signin"}><button>Login</button></Link>
+                    <Link to={"/signin"}> Signin</Link>
                 </p>
             </div>
     );
