@@ -7,12 +7,10 @@ function Signup() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log({ [name]: value });
         setFormData({
             ...formData,
             [name]: value,
         });
-        console.log(formData);
     };
 
     const handleSubmit = async (e) => {
@@ -24,7 +22,7 @@ function Signup() {
                 formData,
                 {
                     headers: {
-                        "Content-Type": "application/json", // Correct content type
+                        "Content-Type": "application/json",
                     },
                 }
             );
@@ -45,7 +43,7 @@ function Signup() {
                     onChange={handleChange}
                     type="text"
                     id="firstName"
-                    name="firstName" // Match this with backend expected field
+                    name="firstName"
                 />
                 <p></p>
 
@@ -54,25 +52,25 @@ function Signup() {
                     onChange={handleChange}
                     type="text"
                     id="lastName"
-                    name="lastName" // Match this with backend expected field
+                    name="lastName"
                 />
                 <p></p>
 
                 <label htmlFor="email">Email : </label>
                 <input
                     onChange={handleChange}
-                    type="email" // Use email input type for validation
+                    type="email"
                     id="email"
-                    name="username" // Match this with backend expected field (username as email)
+                    name="username"
                 />
                 <p></p>
 
                 <label htmlFor="password">Password : </label>
                 <input
                     onChange={handleChange}
-                    type="password" // Use password type for security
+                    type="password"
                     id="password"
-                    name="password" // Match this with backend expected field
+                    name="password"
                 />
                 <p></p>
 
