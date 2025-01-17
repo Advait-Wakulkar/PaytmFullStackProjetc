@@ -6,6 +6,6 @@ export const signupState = atom({
         firstName : '',
         lastName : '',
         email : '',
-        password : ''
+        password : ' '
     }
 })

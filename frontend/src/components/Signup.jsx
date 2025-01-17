@@ -1,9 +1,12 @@
 import { RecoilRoot, useRecoilState } from "recoil";
 import { signupState } from "./atoms/signupAtoms";
 import axios from "axios";
+import { Link, useNavigate } from "react-router";
 
 function Signup() {
     const [formData, setFormData] = useRecoilState(signupState);
+
+    let navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -27,13 +30,14 @@ function Signup() {
                 }
             );
             console.log(response.data);
+            navigate("/dashboard")
+
         } catch (error) {
-            console.error("Error during signup:", error);
+            console.error("Error during signup: (Email already registered)");
         }
     };
 
     return (
-        <RecoilRoot>
             <div>
                 <h1>Signup</h1>
                 <p>Enter your information to create an account</p>
@@ -73,13 +77,11 @@ function Signup() {
                     name="password"
                 />
                 <p></p>
-
-                <button onClick={handleSubmit}>Signup</button>
-                <p>
-                    Already have an account? <button>Login</button>
+                <button onClick={handleSubmit}>Signup</button>    
+                <p>Already have an account? 
+                    <Link to={"/signin"}><button>Login</button></Link>
                 </p>
             </div>
-        </RecoilRoot>
     );
 }
 
