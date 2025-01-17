@@ -23,7 +23,7 @@ function Signup(){
         <p></p>
 
         <label htmlFor="firstname">First Name : </label>
-        <input onChange={handleChange} value={formData.firstName} type="textbox" id="firstname" name="firstname"></input>
+        <input onChange={handleChange} type="textbox" id="firstname" name="firstname"></input>
         <p></p>
         <label htmlFor="lastname">Last Name : </label>
         <input onChange={handleChange} type="textbox" id="lastname" name="lastname"></input>
