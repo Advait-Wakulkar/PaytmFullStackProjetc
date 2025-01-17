@@ -1,4 +1,10 @@
+import { useRecoilState } from "recoil"
+import { signupState } from "./atoms/signupAtoms"
+
 function Signup(){
+
+    const [formData, setFormData] = useRecoilState(signupState)
+
     return <>
     <div>
         <h1>Signup</h1>
@@ -19,7 +25,8 @@ function Signup(){
         <input type="textbox" id="password" name="password"></input>
         <p></p>
         <button>Signup</button>
-        <p>Already have an account? </p>
+        <p>Already have an account?  <button>Login</button>
+        </p>
 
     </div>
     </>
