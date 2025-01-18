@@ -33,6 +33,9 @@ function Signin(){
             }
         )
         console.log(response.data)
+        if (response.data.token) {
+            localStorage.setItem("jwtToken", response.data.token)
+        }
         navigate("/dashboard")
         } catch(error){
             console.log("Error Logging in ", error)
