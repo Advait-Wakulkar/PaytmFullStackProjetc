@@ -30,7 +30,7 @@ function Signup() {
                 }
             );
             console.log(response.data);
-            navigate("/dashboard")
+            navigate("/signin")
 
         } catch (error) {
             console.error("Error during signup: (Email already registered)");
