@@ -84,6 +84,7 @@ function Dashboard() {
                                 <div className="login-form">
                                     <h3>{user.firstName} {user.lastName}</h3>
                                     <button onClick={OpenModal}>Send Money</button>
+                                    <p></p>
                                 </div>
                             </div>
                         ))

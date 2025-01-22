@@ -5,7 +5,7 @@ const SendMoneyModal = ({ isOpen, closeModal, children }) => {
   return (
     <div className="modal-overlay" onClick={closeModal}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={closeModal}>X</button>
+        <button className="close-btn" onClick={closeModal}>Cancel Transaction</button>
         {children}
       </div>
     </div>
