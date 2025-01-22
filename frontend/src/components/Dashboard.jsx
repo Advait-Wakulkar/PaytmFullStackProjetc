@@ -85,13 +85,13 @@ function Dashboard() {
                                     <h3>{user.firstName} {user.lastName}</h3>
                                     <button onClick={OpenModal}>Send Money</button>
                                     <p></p>
+                                    {isModalOpen ? (<SendMoneyModal isOpen={OpenModal} closeModal={CloseModal}></SendMoneyModal>) : null}
                                 </div>
                             </div>
                         ))
                     ) : searchValue ? (
                         <span>No users found.</span>
                     ) : null}
-                    {isModalOpen ? (<SendMoneyModal isOpen={OpenModal} closeModal={CloseModal}></SendMoneyModal>) : null}
                 </div>
             </div>
         </>
