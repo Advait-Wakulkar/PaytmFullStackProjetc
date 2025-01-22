@@ -2,11 +2,21 @@ import { useRecoilState } from "recoil"
 import { displayUserAtoms, getBalanceAtoms } from "./atoms/getBalanceAtoms"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import SendMoneyModal from "./SendMoneyModal"
 
 function Dashboard() {
     const [getBalance, setGetBalance] = useRecoilState(getBalanceAtoms)
     const [fetchUsers, setFetchUsers] = useRecoilState(displayUserAtoms)
     const [searchValue, setSearchValue] = useState("")
+    const [isModalOpen, setIsModalOpen] = useState(true)
+
+    const OpenModal = ()=>{
+        setIsModalOpen(true)
+    }
+
+    const CloseModal = ()=>{
+        setIsModalOpen(false)
+    }
 
     const fetchBalance = async () => {
         const token = await localStorage.getItem("jwtToken")
@@ -73,13 +83,14 @@ function Dashboard() {
                             <div key={user._id || index}>
                                 <div className="login-form">
                                     <h3>{user.firstName} {user.lastName}</h3>
-                                    <button>Send Money</button>
+                                    <button onClick={OpenModal}>Send Money</button>
                                 </div>
                             </div>
                         ))
                     ) : searchValue ? (
                         <span>No users found.</span>
                     ) : null}
+                    {isModalOpen ? (<SendMoneyModal isOpen={OpenModal} closeModal={CloseModal}></SendMoneyModal>) : null}
                 </div>
             </div>
         </>
